@@ -7,6 +7,12 @@
 
 **Conterisation:** Used docker compose for container orchestration. The container runs on a AWS EC2 instance exposed on port:5000
 
+**Diagrams:** 
+
+CHC-INFRA.png - Infrastructure diagram of the deployed application
+
+CHC-PROD.jpeg - Deployment Lifecycle
+
 **How to Run the application:**
 
 Step 1: Clone the Git repo
