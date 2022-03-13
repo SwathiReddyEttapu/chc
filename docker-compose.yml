@@ -2,7 +2,9 @@ version: "3.9"
 services:
   webapp:
     build: .
-    #ports:
-    #  - "6000:6000"
     volumes:
       - .:/app
+    ports:
+      - "5000:5000"
+    container_name: ChangeHealthCare
+    network_mode: "bridge"

@@ -3,7 +3,8 @@ from random import randint
 import requests
 
 app = Flask(__name__)
-
+version = 'v0.01'
+environment = 'AWS Ubuntu Linux'
 
 @app.route("/")
 def index():
@@ -21,9 +22,11 @@ def getString():
     count = players[randint(0, 5)]
     response = requests.get(f'http://www.boredapi.com/api/activity?participants={count}')
     data = response.json()
-    return_string = f'An activity suitable for {data["participants"]} participants would be {data["activity"]} which is of type {data["type"]}'
+    return_string = f'An activity suitable for {data["participants"]} participants would be {data["activity"]} ' \
+                    f'which is of type {data["type"]}<br/><br/>Version: {version}<br/>Environment: {environment}'
+
     return return_string
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=6000)
+    app.run(debug=True, host='0.0.0.0')
